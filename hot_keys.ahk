@@ -23,15 +23,15 @@ clip_to_quote() {
         {
             if k = items.Length 
             {
-                new_clip.Push RegExReplace(v, "^(.*)$", "'$1'")
+                new_clip.Push RegExReplace(Trim(v), "^(.*)$", "'$1'")
             }
             Else
             {
-                new_clip.Push RegExReplace(v, "^(.*)$", "'$1',")
+                new_clip.Push RegExReplace(Trim(v), "^(.*)$", "'$1',")
             }
           
         }
-    MsgBox Join("`r`n", new_clip*)
+        A_Clipboard := Join("`r`n", new_clip*)
     
 }
 
